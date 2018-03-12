@@ -41,8 +41,11 @@ sudo make install
 ```
 
 ## Neofetch
-`sudo add-apt-repository ppa:dawidd0811/neofetch`
-`sudo apt update && sudo apt install neofetch`
+
+```
+sudo add-apt-repository ppa:dawidd0811/neofetch
+sudo apt update && sudo apt install neofetch
+```
 
 ## playerctl
 kunjungi [playerctl github pages](https://github.com/acrisci/playerctl).
