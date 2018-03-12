@@ -1,0 +1,63 @@
+!! SELALU INGAT UNTUK xrdb -merge .Xresources
+
+!! Appearance
+urxvt.termName:    rxvt-unicode
+urxvt.scrollBar:   false
+urxvt.background:  #eeeeee
+urxvt.foreground:  #4d4d4c
+urxvt.cursorColor: #d75f00
+
+!! Font prefferenes
+urxvt.font: 	xft:SF Mono	:size=10
+urxvt.letterSpace: -1
+
+!! Larger history limit
+urxvt.saveLines: 1000000
+
+!! Perl extensions
+urxvt.perl-ext-common: default,matcher,font-size
+!! Open urls in browser with Control-Click
+urxvt.urlLauncher: /usr/bin/firefox
+urxvt.matcher.button: C1
+!! Change font size on Control-Plus/Minus
+URxvt.keysym.Control-0x2b: perl:font-size:increase
+URxvt.keysym.Control-0x2d: perl:font-size:decrease
+
+
+URxvt.perl-lib: ~/.urxvt/ext/
+
+!!URxvt.perl-ext-common: ...,keyboard-select
+!!URxvt.keysym.M-Escape: perl:keyboard-select:activate
+
+!!URxvt.keysym.M-s: perl:keyboard-select:search
+
+!! *cursor: #a8a19f
+
+!! urxvt color
+
+!! PaperColor Theme
+
+!! black
+urxvt.color0: #ededed
+urxvt.color8: #969694
+!! red
+urxvt.color1: #d7005f
+urxvt.color9: #d7005f
+!! green
+urxvt.color2: #718c00
+urxvt.color10: #718c00
+!! yellow
+urxvt.color3: #d75f00
+urxvt.color11: #d75f00
+!! blue
+urxvt.color4: #4271ae
+urxvt.color12: #4271ae
+!! magenta
+urxvt.color5: #8959a8
+urxvt.color13: #8959a8
+!! cyan
+urxvt.color6: #3e999f
+urxvt.color14: #3e999f
+!! white
+urxvt.color7: #4d4d4c
+urxvt.color15: #f5f5f5
