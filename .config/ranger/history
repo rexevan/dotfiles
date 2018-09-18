@@ -1,0 +1,10 @@
+
+open_with r
+f
+feh 
+find 
+rename .Renviron
+rename .selected_editor
+rename .config.h
+delete
+rename config.h

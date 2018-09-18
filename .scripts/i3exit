@@ -1,0 +1,3 @@
+#!/bin/sh
+
+[$(echo -e "Tidak\nYa" | dmenu -fn Ubuntu -nb black -sb orange -nf gray -sf black -p "Keluar i3?" -i) == "Ya"] && 'i3 exit'
