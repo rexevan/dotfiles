@@ -1,3 +1,26 @@
+!! The default colors are "Gruvbox":
+!*.color0: #1d2021
+!*.color1: #cc241d
+!*.color2: #98971a
+!*.color3: #d79921
+!*.color4: #458588
+!*.color5: #b16286
+!*.color6: #689d6a
+!*.color7: #a89984
+!*.color8: #928374
+!*.color9: #fb4934
+!*.color10: #b8bb26
+!*.color11: #fabd2f
+!*.color12: #83a598
+!*.color13: #d3869b
+!*.color14: #8ec07c
+!*.color15: #ebdbb2
+!! Transparency (0-255):
+*.alpha: 230
+!! Set a default font and font size as below:
+*.font: Monospace-10;
+
+
 ! -- Pencil -------------------------------------------------------- {{{
 !
 !   A color scheme inspired by iA Writer
@@ -8,122 +31,35 @@
 ! -- Colors -------------------------------------------------------- {{{
 
 ! Base
-!*background: #212121
-!*foreground: #d9d9d9
+*background: #212121
+*foreground: #d9d9d9
 !*cursorColor: #20bbfc
-!! Black
-!*color0: #212121
-!*color8: #424242
-!! Red
-!*color1: #c30771
-!*color9: #fb007a
-!! Green
-!*color2: #10a778
-!*color10: #5fd7af
-!! Yellow
-!*color3: #a89c14
-!*color11: #f3e430
-!! Blue
-!*color4: #008ec4
-!*color12: #20bbfc
-!! Magenta
-!*color5: #523c79
-!*color13: #6855de
-!! Cyan
-!*color6: #20a5ba
-!*color14: #4fb8cc
-!! White
-!*color7: #d9d9d9
-!*color15: #f1f1f1
+! Black
+*color0: #212121
+*color8: #424242
+! Red
+*color1: #c30771
+*color9: #fb007a
+! Green
+*color2: #10a778
+*color10: #5fd7af
+! Yellow
+*color3: #a89c14
+*color11: #f3e430
+! Blue
+*color4: #008ec4
+*color12: #20bbfc
+! Magenta
+*color5: #523c79
+*color13: #6855de
+! Cyan
+*color6: #20a5ba
+*color14: #4fb8cc
+! White
+*color7: #d9d9d9
+*color15: #f1f1f1
 
 ! }}}
 
 ! vim:foldmethod=marker:filetype=xdefaults
 
-!!special
-!*.foreground: #1b1b2e
-!*.background: #fff6f6
-!*.cursorColor: #1b1b2e
-!
-!!black
-!*.color0: #c5e1e3
-!*.color8: #889499
-!
-!!red
-!*.color1: #f3c4c4
-!*.color9: #cd6868
-!
-!!green
-!*.color2: #93ba84
-!*.color10: #48c983
-!
-!!yellow
-!*.color3: #cecce2
-!*.color11: #707a9a
-!
-!!blue
-!*.color4: #bfa4cd
-!*.color12: #a556ad
-!
-!!magenta
-!*.color5: #f3adcd
-!*.color13: #c269f
-!
-!!cyan
-!*.color6: #87e0dc
-!*.color14: #4va89d
-!
-!!white
-!*.color7: #8ba5b3
-!*.color15: #1f203a
-
-
-!konosuba
-*.foreground: #291A1D
-*.background: #ffffff
-*.cursorColor: #f46903
-
-!black
-*.color0: #56595b
-*.color8: #a0a5af
-
-!red/orange
-*.color1: #ee0f68
-*.color9: #ee0f68
-
-!green
-*.color2: #008084
-*.color10: #00a4aa
-
-!yellow
-*.color3: #fcbb09
-*.color11: #fcbb09
-
-!blue
-*.color4: #24abe8
-*.color12: #24abe8
-
-!magenta
-*.color5: #bd79b2
-*.color13: #bd79b2
-
-!cyan
-*.color6: #00c0c6
-*.color14: #283044
-
-!white
-*.color7: #b0b4bc
-*.color15: #d1d1d1
-
-!URxvt*fading:  30
-*scrollBar:  false
-*colorUL:  #20a5ba
-*font: xft:Ubuntu Mono:size=12
-
-URxvt*perl-ext:
-URxvt*perl-ext-common:
-URxvt*.termName: screen-256color
-
-! FAKE transparency
-!urxvt*depth: 32
-!urxvt*background: rgba:0000/0000/0200/c800

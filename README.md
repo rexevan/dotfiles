@@ -14,7 +14,6 @@
 * `vim` Text Editor
 * `scrot` dan `xclip` Screenshot
 * `xbacklight` dan `light` untuk pengaturan kecerahan
-* `Roboto Mono`, `Fira Code`, `System San Francisco`, `SF Mono` font.
 * `playerctl` Multimedia keys dengan VLC
 
 Beberapa paket dapat langsung di install
@@ -51,7 +50,7 @@ sudo apt update && sudo apt install neofetch
 kunjungi [playerctl github pages](https://github.com/acrisci/playerctl).
 
 ## rofi
-Untuk 16.04 diperlukan ppa agar sampai rofi 1.5 
+Untuk 16.04 diperlukan ppa agar sampai rofi 1.5
 
 ```{bash}
 sudo add-apt-repository ppa:jasonpleau/rofi
