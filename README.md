@@ -1,58 +1,70 @@
 # Pengaturan Desktop
 
-12 Maret 2018
+*Shoutout to Luke Smith for inspiring me to do this thing.*
 
-* `Ubuntu LTS 16.04` Sistem Operasi.
-+ `Unity / Gnome` Desktop Environment.
+14 Desember 2018
+
++ `Ubuntu LTS 18.04 MATE` Sistem Operasi.
 + `i3-gaps` Window Manager.
-* `i3lock` dan `i3blocks` Pengunci layar dan taskbar
-* `urxvt` untuk terminal.
-* `neofetch` untuk fetching
-* `rofi` program launcher
-* `mocp` Music Player
-* `feh` for Background and picture
-* `vim` Text Editor
-* `scrot` dan `xclip` Screenshot
-* `xbacklight` dan `light` untuk pengaturan kecerahan
-* `playerctl` Multimedia keys dengan VLC
++ `st` untuk terminal.
++ `neofetch` untuk pamer
++ `dmenu` untuk launcher
++ `feh` untuk background and picture
++ `Neovim` Text Editor
++ `scrot` dan `xclip` Screenshot
++ `light` untuk pengaturan kecerahan
++ `playerctl` Multimedia keys dengan VLC
 
 Beberapa paket dapat langsung di install
-`sudo apt install urxvt rofi mocp feh vim scrot pactl xclip`
+
+```{bash}
+sudo apt install feh neovim xclip make automake
+```
 
 ## i3-gaps
 
-1. Install `i3lock` dan `i3blocks`. Ubuntu secara otomatis menginstall `i3-wm`.
-2. Hapus `i3-wm` lalu install `i3-gaps`.
-
-Dependecies: `libtool`
-`sudo apt install i3blocks i3lock libtool && sudo apt remove i3-wm`.
-
 Untuk install `i3-gaps` dapat mengikuti [AirBlader](https://github.com/Airblader/i3/wiki/Compiling-&-Installing).
 
+## i3-blocks
+
+i3-blocks yang digunakan adalah yang juga mengikuti [AirBlader](https://github.com/Airblader/i3blocks-gaps).
+
 ## light
-Ikuti [cialu.net](https://cialu.net/brightness-control-not-work-i3wm/) atau ikuti di bawah ini
+Ikuti [haikaren github.io](http://haikarainen.github.io/light/) atau ikuti script di bawah.
 
 ```{bash}
 git clone https://github.com/haikarainen/light.git
 cd light
-sudo make
+./autogen.sh
+./configure && make
 sudo make install
-```
-
-## Neofetch
-
-```
-sudo add-apt-repository ppa:dawidd0811/neofetch
-sudo apt update && sudo apt install neofetch
 ```
 
 ## playerctl
 kunjungi [playerctl github pages](https://github.com/acrisci/playerctl).
 
-## rofi
-Untuk 16.04 diperlukan ppa agar sampai rofi 1.5
+
+## Launcher
+
+Untuk  launcher, saya menggunakan *dmenu*.
+Di Ubuntu 18.04, diperlukan 2 dependencies agar *dmenu* dapat diinstall.
 
 ```{bash}
-sudo add-apt-repository ppa:jasonpleau/rofi
-sudo apt-get update
+sudo apt install libx11-dev libxinerama-dev
+
+https://github.com/LukeSmithxyz/dmenu.git dmenu
+cd dmenu
+make
+sudo make install
+```
+
+## Terminal
+
+Untuk terminal, saya menggunakan *simple terminal.*
+
+```
+git clone https://github.com/LukeSmithxyz/st.git st
+cd st
+make
+sudo make install
 ```
