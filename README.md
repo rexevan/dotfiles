@@ -89,3 +89,25 @@ curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
 
 ## Analisis Statistik
 
+Untuk Analisis Statistik, bahasa pemrogramnan R digunakan. Kunjungi
+[r-project](https://repo.bppt.go.id/cran/) untuk panduan mendownload.
+
+Setelah itu, beberapa paket R perlu diinstall.
+`tidyverse` digunakan untuk melakukan analisis.
+`openxlsx` digunakan untuk mengekspor data ke ekstensi .xslx
+`tinytex` digunakan untuk menulis TeX.
+
+Sebelum menginstall paket tersebut, beberapa paket untuk distro perlu
+diinstall.
+
+
+```{bash}
+sudo apt install libcurl4-openssl-dev libssl-dev libxml2-dev
+```
+
+Sekarang, paket R dapat diinstal.
+
+```{r}
+install.packages(c("tidyverse", "openxlsx", "tinytex")
+```
+
