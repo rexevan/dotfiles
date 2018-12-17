@@ -18,7 +18,7 @@
 Beberapa paket dapat langsung di install
 
 ```{bash}
-sudo apt install feh neovim xclip make automake
+sudo apt install feh xclip make automake zathura mpv mpd
 ```
 
 ## i3-gaps
@@ -43,11 +43,11 @@ sudo make install
 ## playerctl
 kunjungi [playerctl github pages](https://github.com/acrisci/playerctl).
 
-
 ## Launcher
 
-Untuk  launcher, saya menggunakan *dmenu*.
-Di Ubuntu 18.04, diperlukan 2 dependencies agar *dmenu* dapat diinstall.
+Untuk launcher program layaknya *start menu* di Windows, saya menggunakan *dmenu*.
+Program ini dapat digunakan untuk hal lain selain menjadi Launcher.
+Di Ubuntu 18.04, saya menggunakan *dmenu* yang berasal dari GitHub Luke Smith. Diperlukan 2 dependencies agar *dmenu* dapat diinstall.
 
 ```{bash}
 sudo apt install libx11-dev libxinerama-dev
@@ -68,3 +68,24 @@ cd st
 make
 sudo make install
 ```
+
+## Text Editor
+
+Text-Editor yang digunakan adalah Neovim.
+
+```{bash}
+sudo apt install neovim
+```
+
+### vim-plug
+
+Untuk memperkaya kemampuan Neovim, `vim-plug` dipilih. `vim-plug` akan membantu
+memasang plugin-plugin.
+
+```{bash}
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+```
+
+## Analisis Statistik
+

@@ -6,7 +6,7 @@
 
 let mapleader =" "
 
-call plug#begin('~/.config/nvim/plugged')
+call plug#begin('~/.neovim/plugin')
 Plug 'junegunn/goyo.vim'
 Plug 'PotatoesMaster/i3-vim-syntax'
 Plug 'reedes/vim-pencil'
@@ -14,10 +14,13 @@ Plug 'reedes/vim-colors-pencil'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-surround'
+Plug 'morhetz/gruvbox'
+Plug 'NLKNguyen/papercolor-theme'
+Plug 'ryanoasis/vim-devicons' " Always put this plugin at the end
 call plug#end()
 
 " Some basics:
-	set nocompatible
+	"set nocompatible
 	filetype plugin on
 	syntax on
 	set encoding=utf-8
@@ -36,13 +39,15 @@ call plug#end()
 " Escape shortcut
 	inoremap kj <esc>
 	inoremap jk <esc>
-" Themes
+
+" Themes and eyecandy
     	set termguicolors
-    	colorscheme pencil
+    	colorscheme gruvbox
     	set background=dark
-    	let g:pencil_higher_contrast_ui = 1   " 0=low (def), 1=high
-    	let g:pencil_neutral_headings = 0   " 0=blue (def), 1=normal
-    	let g:pencil_neutral_code_bg = 0   " 0=gray (def), 1=normal
+    	"let g:pencil_higher_contrast_ui = 1   " 0=low (def), 1=high
+    	"let g:pencil_neutral_headings = 0   " 0=blue (def), 1=normal
+    	"let g:pencil_neutral_code_bg = 0   " 0=gray (def), 1=normal
+	"let g:airline_theme='monochrome'
 
 " Goyo plugin makes text more readable when writing prose:
 	map <leader>f :Goyo \| set linebreak<CR>
@@ -96,7 +101,7 @@ call plug#end()
 
 " Enable Goyo by default for mutt writting
 	" Goyo's width will be the line limit in mutt.
-	autocmd BufRead,BufNewFile /tmp/neomutt* let g:goyo_width=100
+	autocmd BufRead,BufNewFile /tmp/neomutt* let g:goyo_width=120x90
 	autocmd BufRead,BufNewFile /tmp/neomutt* :Goyo
 
 " Automatically deletes all trailing whitespace on save.

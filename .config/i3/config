@@ -1,10 +1,10 @@
 # i3 config file (v4)
-# vim: filetype=i3config
+# vim: filetype=i3
 # Pakai juga xev untuk lihat tombol keyboard
 # Referensi : https://i3wm.org/docs/userguide.html
 # Mod4 = Windows Key / Super Key
 
-font pango: 3270Medium Nerd Font Medium 10
+font pango: Ubuntu
 
 set $mod Mod4
 
@@ -24,15 +24,16 @@ set $browser google-chrome-stable
 set $music st -e mocp -T ~/.moc/themes/solarized
 set $explorer st -e ranger
 #set $explorer urxvt -e ranger
-set $launcher ~/.scripts/dmenu
-set $wallpaper ~/.scripts/fehbg
+set $launcher ~/.scripts/i3cmd/dmenu
+set $wallpaper ~/.scripts/i3cmd/fehbg
 set $screenlock i3lock
+set $mount ~/.scripts/i3cmd/dmenumount
+set $umount ~/.scripts/i3cmd/dmenuumount
+
 
 # Kecerahan Layar
-#set $lightUp xbacklight -inc 10
-#set $lightDown xbacklight -dec 10
-set $lightUp light -A 10
-set $lightDown light -U 10
+set $lightUp 	light -A 10
+set $lightDown 	light -U 10
 
 # Suara / Volume - belum bekerja
 set $volumeUp   pactl set-sink-volume 0 +5%
@@ -54,13 +55,17 @@ bindsym $mod+x exec --no-startup-id $screenlock
 
 #split and spawn terminal
 bindsym $mod+apostrophe		split horizontal ;; exec $term
-bindsym $mod+slash		    split vertical ;; exec $term
+bindsym $mod+slash		split vertical ;; exec $term
+
+# Mount Drive
+bindsym $mod+m 		exec --no-startup-id $mount
+bindsym $mod+Shift+m 	exec --no-startup-id $umount
 
 # audio
-bindsym --release Print exec scrot
-bindsym XF86AudioRaiseVolume exec --no-startup-id $volumeUp
-bindsym XF86AudioLowerVolume exec --no-startup-id $volumeDown
-bindsym XF86AudioMute exec --no-startup-id $modute
+bindsym --release Print 	exec scrot
+bindsym XF86AudioRaiseVolume 	exec --no-startup-id $volumeUp
+bindsym XF86AudioLowerVolume 	exec --no-startup-id $volumeDown
+bindsym XF86AudioMute 		exec --no-startup-id $modute
 
 # VLC Control
 bindsym XF86AudioPlay exec playerctl play-pause
@@ -68,35 +73,35 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 #### i3 Window ####
-bindsym $mod+h			    focus left
-bindsym $mod+Shift+h		move left 30
+bindsym $mod+h	        focus left
+bindsym $mod+Shift+h	move left 30
 
-bindsym $mod+j			    focus down
-bindsym $mod+Shift+j		move down 30
+bindsym $mod+j	        focus down
+bindsym $mod+Shift+j	move down 30
 
-bindsym $mod+k			    focus up
-bindsym $mod+Shift+k		move up 30
+bindsym $mod+k	        focus up
+bindsym $mod+Shift+k	move up 30
 
-bindsym $mod+l			    focus right
-bindsym $mod+Shift+l		move right 30
+bindsym $mod+l	        focus right
+bindsym $mod+Shift+l	move right 30
 
-bindsym $mod+z			    gaps outer current plus 5
-bindsym $mod+Shift+z		gaps outer current minus 5
+bindsym $mod+z	        gaps outer current plus 5
+bindsym $mod+Shift+z	gaps outer current minus 5
 
-bindsym $mod+s			    gaps inner current plus 5
-bindsym $mod+Shift+s		gaps inner current minus 5
+bindsym $mod+s	    	gaps inner current plus 5
+bindsym $mod+Shift+s	gaps inner current minus 5
 
 bindsym $mod+d          exec --no-startup-id $launcher
-bindsym $mod+Shift+d		gaps inner current set 0; gaps outer current set 0
+bindsym $mod+Shift+d	gaps inner current set 0; gaps outer current set 0
 
-bindsym XF86MonBrightnessUp   exec $lightUp
-bindsym XF86MonBrightnessDown exec $lightDown
-bindsym XF86HomePage exec $browser
+bindsym XF86MonBrightnessUp   	exec $lightUp
+bindsym XF86MonBrightnessDown 	exec $lightDown
+bindsym XF86HomePage 		exec $browser
 
-bindsym $mod+Return exec --no-startup-id $term
-bindsym $mod+r exec --no-startup-id $explorer
-bindsym $mod+m exec --no-startup-id $music
-bindsym $mod+c exec --no-startup-id caja
+bindsym $mod+Return 	exec --no-startup-id $term
+bindsym $mod+r 		exec --no-startup-id $explorer
+#bindsym $mod+m 	exec --no-startup-id $music
+bindsym $mod+c 		exec --no-startup-id caja
 
 ## NOT USING CURRENTLY ##
 # enter fullscreen mode for the focused container
@@ -169,19 +174,21 @@ bindsym $mod+Shift+9  move container to workspace $ws9
 bindsym $mod+0        workspace $ws10
 bindsym $mod+Shift+0  move container to workspace $ws10
 
-bindsym $mod+Home		      workspace $ws1
+bindsym $mod+Home	      	workspace $ws1
 bindsym $mod+Shift+Home		move container to workspace $ws1
 
-bindsym $mod+End		      workspace $ws10
+bindsym $mod+End	      	workspace $ws10
 bindsym $mod+Shift+End		move container to workspace $ws10
 
-bindsym $mod+Prior		    workspace prev
+bindsym $mod+Prior	    	workspace prev
 bindsym $mod+Shift+Prior	move container to workspace prev
 
-bindsym $mod+Next		      workspace next
+bindsym $mod+Next	      	workspace next
 bindsym $mod+Shift+Next		move container to workspace next
 
 bindsym $mod+Tab		workspace back_and_forth
+
+bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
 
 #### Config File ####
 
@@ -213,16 +220,17 @@ set_from_resource $darkwhite	color7  #000000
 set_from_resource $white	color15 #000000
 set $transparent		#00000000
 
-#                       BORDER		BACKGROUND	TEXT		INDICATOR   CHILD_BORDER
+#                       BORDER		BACKGROUND	TEXT		INDICATOR   		CHILD_BORDER
 client.focused		$red		$red		$magenta	$darkmagenta		$darkblue
 client.unfocused	$transparent	$blue		$white		$darkblue		$darkblack
 client.focused_inactive	$transparent	$blue		$white		$darkblue		$darkblack
 client.urgent		$darkred	$darkred	$black		$darkred		$darkred
-client.background $black
+client.background 	$black
 
 bar {
-  status_command i3blocks
-	position bottom
+# 	status_command i3blocks
+	status_command SCRIPT_DIR=~/.scripts/blocklets i3blocks
+	position top
 	font pango: Font Awesome 5 Free Solid, Font Awesome 5 Free Reguler, Font Awesome 5 Brands Regular 9
 	separator_symbol "|"
 	strip_workspace_numbers no
