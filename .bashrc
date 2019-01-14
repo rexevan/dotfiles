@@ -12,8 +12,8 @@ esac
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
 
-# append to the history file, don't overwrite it
-shopt -s histappend
+shopt -s histappend # append to the history file, don't overwrite it
+shopt -s autocd # Pindah direktori tanda harus tulis 'cd'
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 HISTSIZE=1000
@@ -72,18 +72,6 @@ fi
 #    ;;
 #esac
 
-# enable color support of ls and also add handy aliases
-if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto'
-    #alias dir='dir --color=auto'
-    #alias vdir='vdir --color=auto'
-
-    alias grep='grep --color=auto'
-    alias fgrep='fgrep --color=auto'
-    alias egrep='egrep --color=auto'
-fi
-
 # colored GCC warnings and errors
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
@@ -117,18 +105,43 @@ if ! shopt -oq posix; then
 fi
 
 # Ubah bentuk prompt
-PS1="[\W]$ ";
+PS1=" \W %>% ";
 #export PS1;
 
-# Ini tambahan dari Pengguna
+alias ls='ls --human-readable --literal --group-directories-first --color=auto'
+
+# Text Editor
 alias v='nvim'
-alias nvimrc='cd ~/.config/nvim && nvim init.vim'
-alias i3conf='cd ~/.config/i3/ && nvim config'
-alias bashrc='nvim ~/.bashrc'
+alias vim='nvim'
+alias swp='cd ~/.local/share/nvim/swap/'
+
+## Change directory
 alias ss='cd ~/.scripts'
+alias dok='cd ~/Dokumen'
+alias und='cd ~/Unduhan'
+alias mus='cd ~/Musik'
+alias gam='cd ~/Gambar'
+alias vid='cd ~/Video'
+
+
+## Config file
+alias nvimrc='nvim ~/.config/nvim/init.vim'
+alias bashrc='nvim ~/.bashrc'
 alias rrc='nvim ~/.config/ranger/rc.conf'
 alias xres='nvim ~/.Xresources'
-alias xxres='xrdb -merge ~/.Xresources'
+alias cffont='nvim ~/.config/fontconfig/fonts.conf'
+alias cfi3g='nvim ~/.config/i3/config'
+alias cfst='nvim ~/.scripts/st/config.h'
+alias cfdmenu='cd ~/.scripts/dmenu && v config.h'
+
+## sudo stuff
+alias apt='sudo apt'
+
+## Internet
+alias yt='youtube-dl --add-metadata -ic -o "~/Video/%(title)s.%(ext)s"' # Download video
+alias yta='youtube-dl --add-metadata -xic -o "~/Musik/%(title)s.%(ext)s"' # Download Video lalu convert ke musik
 
 # Agar Ranger menggunakan vim daripada nano
-VISUAL=nvim; export VISUAL EDITOR=nvim; export EDITOR
+VISUAL=nvim;
+export VISUAL EDITOR=nvim;
+export EDITOR=nvim;
