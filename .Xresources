@@ -1,4 +1,4 @@
-!! The default colors are "Gruvbox":
+!!! The default colors are "Gruvbox":
 !*.color0: #1d2021
 !*.color1: #cc241d
 !*.color2: #98971a
@@ -15,10 +15,10 @@
 !*.color13: #d3869b
 !*.color14: #8ec07c
 !*.color15: #ebdbb2
-!! Transparency (0-255):
-*.alpha: 230
+! Transparency (0-255):
+*.alpha: 240
 !! Set a default font and font size as below:
-*.font: Monospace-10;
+*.font: Monospace-14;
 
 
 ! -- Pencil -------------------------------------------------------- {{{
@@ -30,36 +30,181 @@
 
 ! -- Colors -------------------------------------------------------- {{{
 
-! Base
-*background: #212121
-*foreground: #d9d9d9
-!*cursorColor: #20bbfc
-! Black
-*color0: #212121
-*color8: #424242
-! Red
-*color1: #c30771
-*color9: #fb007a
-! Green
-*color2: #10a778
-*color10: #5fd7af
-! Yellow
-*color3: #a89c14
-*color11: #f3e430
-! Blue
-*color4: #008ec4
-*color12: #20bbfc
-! Magenta
-*color5: #523c79
-*color13: #6855de
-! Cyan
-*color6: #20a5ba
-*color14: #4fb8cc
-! White
-*color7: #d9d9d9
-*color15: #f1f1f1
+!!! Base
+!*foreground: #212121
+!*background: #d9d9d9
+!!*cursorColor: #20bbfc
+!! Black
+!*color0: #212121
+!*color8: #424242
+!! Red
+!*color1: #c30771
+!*color9: #fb007a
+!! Green
+!*color2: #10a778
+!*color10: #5fd7af
+!! Yellow
+!*color3: #a89c14
+!*color11: #f3e430
+!! Blue
+!*color4: #008ec4
+!*color12: #20bbfc
+!! Magenta
+!*color5: #523c79
+!*color13: #6855de
+!! Cyan
+!*color6: #20a5ba
+!*color14: #4fb8cc
+!! White
+!*color7: #d9d9d9
+!*color15: #f1f1f1
 
 ! }}}
 
 ! vim:foldmethod=marker:filetype=xdefaults
 
+!! hard contrast:
+!!*background: #1d2021
+!!*background: #282828
+!! soft contrast:
+!*background: #32302f
+!*foreground: #ebdbb2
+!! Black + DarkGrey
+!*color0:  #282828
+!*color8:  #928374
+!! DarkRed + Red
+!*color1:  #cc241d
+!*color9:  #fb4934
+!! DarkGreen + Green
+!*color2:  #98971a
+!*color10: #b8bb26
+!! DarkYellow + Yellow
+!*color3:  #d79921
+!*color11: #fabd2f
+!! DarkBlue + Blue
+!*color4:  #458588
+!*color12: #83a598
+!! DarkMagenta + Magenta
+!*color5:  #b16286
+!*color13: #d3869b
+!! DarkCyan + Cyan
+!*color6:  #689d6a
+!*color14: #8ec07c
+!! LightGrey + White
+!*color7:  #a89984
+!*color15: #ebdbb2
+
+
+!! PaperColor Theme
+!
+!*.foreground: #4D4D4C
+!*.background: #EEEEEE
+!
+!! black
+!*.color0: #EDEDED
+!*.color8: #969694
+!
+!! red
+!*.color1: #D7005F
+!*.color9: #D7005F
+!
+!! green
+!*.color2: #718C00
+!*.color10: #718C00
+!
+!! yellow / orange
+!*.color3: #D75F00
+!*.color11: #D75F00
+!
+!! blue
+!*.color4: #4271AE
+!*.color12: #4271AE
+!
+!! magenta
+!*.color5: #8959A8
+!*.color13: #8959A8
+!
+!! cyan
+!*.color6: #3E999F
+!*.color14: #3E999F
+!
+!! white
+!*.color7: #4D4D4C
+!*.color15: #F5F5F5
+
+
+!! ChooseYourWeapon
+!! Colors based off a Hiatus Kaiyote album cover.
+
+*.foreground:   #fbf0d2
+*.background:   #181512
+!*.cursorColor:  #839496
+
+! black
+*.color0:       #282828
+*.color8:       #454545
+
+! red
+*.color1:       #e93c93
+*.color9:       #a87181
+
+! green
+*.color2:       #00a17c
+*.color10:      #76a571
+
+! yellow
+*.color3:       #f79031
+*.color11:      #d0a845
+
+! blue
+*.color4:       #00c0ce
+*.color12:      #008ba5
+
+! magenta
+*.color5:       #86458b
+*.color13:      #a0446c
+
+! cyan
+*.color6:       #8eb173
+*.color14:      #007d62
+
+! white
+*.color7:       #d3cab3
+*.color15:      #f4f3e2
+
+
+!!!  WH40k scheme based off of classic Imperial Guard colors.
+!*.foreground:   #fbf7f0
+!*.background:   #1f1f19
+!
+!! black
+!*.color0:       #393a2f
+!*.color8:       #393a2f
+!
+!! red
+!*.color1:       #a5755a
+!*.color9:       #c2896a
+!
+!! green
+!*.color2:       #948f51
+!*.color10:      #b8b265
+!
+!! yellow
+!*.color3:       #cbbca6
+!*.color11:      #e1d0b8
+!
+!! blue
+!*.color4:       #6f7b75
+!*.color12:      #a0b0a8
+!
+!! magenta
+!*.color5:       #906638
+!*.color13:      #b37f46
+!
+!! cyan
+!*.color6:       #686855
+!*.color14:      #8d8d73
+!
+!! white
+!*.color7:       #fbf2e9
+!*.color15:      #fbf2e9
