@@ -111,3 +111,8 @@ Sekarang, paket R dapat diinstal.
 install.packages(c("tidyverse", "openxlsx", "tinytex")
 ```
 
+Dibawah ini adalah opsional, sebab Rstudio entah mengapa tidak membaca font yang berada di folder '~/.fonts' sehingga saya harus menggunakan font dari repo Ubuntu sendiri. 
+
+```{bash}
+sudo apt install fonts-inconsolata fonts-cmu
+```
